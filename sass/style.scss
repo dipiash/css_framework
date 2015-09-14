@@ -1,19 +1,25 @@
 /* start container */
 
 .container {
+  box-sizing: border-box;
   width: 100%;
 }
 
 .container--center {
-  width: 90%;
+  box-sizing: border-box;
   margin: 0 auto;
 
-  @media (min-width: 0px) and (max-widht: 320px) {
-    width: 320px;
+  @media (min-width: 0px) and (max-width: 320px) {
+    min-width: 320px;
   }
 
-  @media (min-width: 320px) and (max-widht: 760px) {
+  @media (min-width: 320px) and (max-width: 760px) {
     width: 100%;
+  }
+
+
+  @media (min-width: 760px) {
+    width: 90%;
   }
 }
 

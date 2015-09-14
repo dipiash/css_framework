@@ -2,7 +2,8 @@ var gulp = require('gulp'),
     csso = require('gulp-csso'),
     concat = require('gulp-concat'),
     imagemin = require('gulp-imagemin'),
-    jade = require('gulp-jade'),
+    jade = require('jade');
+    g_jade = require('gulp-jade'),
     sass = require('gulp-sass'),
     uglify = require('gulp-uglify'),
     watch = require('gulp-watch'),
@@ -26,9 +27,16 @@ gulp.task('js', function() {
 
 })
 */
-gulp.task('jade', function() {{
 
-}})
+gulp.task('jade', function () {
+  return gulp.src(['*.jade'])
+    .pipe(g_jade({
+      jade: jade,
+      pretty: true
+    }))
+    .pipe(gulp.dest('dist/'))
+})
+
 /*
 gulp.task('connect', function() {
 
@@ -36,4 +44,5 @@ gulp.task('connect', function() {
 */
 gulp.task('watch',function() {
     gulp.watch('sass/*.scss',['sass']);
+    gulp.watch('*.jade', ['jade'])
 });

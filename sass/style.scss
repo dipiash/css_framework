@@ -1,0 +1,33 @@
+/* start container */
+
+.container {
+  width: 100%;
+}
+
+.container--center {
+  width: 90%;
+  margin: 0 auto;
+
+  @media (min-width: 0px) and (max-widht: 320px) {
+    width: 320px;
+  }
+
+  @media (min-width: 320px) and (max-widht: 760px) {
+    width: 100%;
+  }
+}
+
+/* end container */
+
+
+/* start backgrounds */
+
+.background--light-grey {
+  background: #eee;
+}
+
+.background--grey {
+  background: #ccc;
+}
+
+/* end backgrounds */

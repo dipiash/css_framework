@@ -59,3 +59,30 @@
 @include background($title: 'cyan', $color: #00BCD4);
 
 /* end backgrounds */
+
+/* start helpers ------------------------------------------------------------*/
+
+.b_float {
+  &--left {
+    float: left;
+  }
+
+  &--right {
+    float: right;
+  }
+}
+
+.b_clearfix {
+  zoom: 1; // for ie6/ie7
+
+  &:after {
+    clear: both;
+  }
+
+  &:after, &:before {
+    content: '';
+    display: table;
+  }
+}
+
+/* end helpers */

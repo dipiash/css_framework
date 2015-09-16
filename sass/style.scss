@@ -28,12 +28,22 @@
 
 /* start backgrounds */
 
-.background--light-grey {
-  background: #eee;
+@mixin background ($title, $color) {
+  $i: 1;
+  @each $bg in (
+    one $color,
+    two  lighten($color, 10%),
+    three lighten($color, 20%),
+    four lighten($color, 30%),
+    five lighten($color, 40%)
+  ) {
+    .background--#{$title}_#{$i} {
+      background: #{nth($bg, 2)}
+    }
+    $i: $i + 1;
+  }
 }
 
-.background--grey {
-  background: #ccc;
-}
-
+@include background($title: 'grey', $color: grey);
+@include background($title: 'yellow', $color: yellow);
 /* end backgrounds */

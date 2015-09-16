@@ -32,7 +32,7 @@ $width_big: 1200px;
 
 /* start backgrounds --------------------------------------------------------*/
 
-@mixin background ($title, $color) {
+@mixin background($title, $color) {
   $i: 0;
   @each $bg in (
     zero darken($color, 15%),

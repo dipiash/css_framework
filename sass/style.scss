@@ -1,22 +1,28 @@
 /* start container ----------------------------------------------------------*/
 
+$width_small: 100%;
+$width_med_sm: 540px;
+$width_medium: 960px;
+$width_big: 1200px;
+
 .container {
   box-sizing: border-box;
   width: 100%;
+  min-width: 320px;
 
   &--center {
     margin: 0 auto;
 
-    @media (min-width: 0px) and (max-width: 320px) {
-      min-width: 320px;
-    }
-
-    @media (min-width: 320px) and (max-width: 760px) {
+    @media (min-width: 0px) and (max-width: 960px) {
       width: 100%;
     }
 
-    @media (min-width: 760px) {
-      width: 90%;
+    @media (min-width: 960px) and (max-width: 1200px) {
+      width: 960px;
+    }
+
+    @media (min-width: 1200px) {
+      width: 1200px;
     }
   }
 }
@@ -62,12 +68,12 @@
 
 /* start helpers ------------------------------------------------------------*/
 
-.b_float {
-  &--left {
+.b--float {
+  &_left {
     float: left;
   }
 
-  &--right {
+  &_right {
     float: right;
   }
 }
@@ -86,3 +92,56 @@
 }
 
 /* end helpers */
+
+/* start columns -------------------------------------------------------------*/
+
+.b_column {
+  box-sizing: border-box;
+  position: relative;
+  @extend .b--float_left;
+  text-align: center;
+
+  &:after, &:before {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@mixin columns($column_title: '', $count_columns: 12) {
+  $simple_column_width: 100% / $count_columns;
+  $i: 1;
+  $title: '.b_column';
+
+  @if $column_title != '' {
+    $title: $title + '_' + $column_title;
+  }
+
+  @while ($i <= $count_columns) {
+    #{$title}--size_#{$i} {
+      width: $simple_column_width * $i;
+    }
+    $i: $i + 1;
+  }
+}
+
+@include columns;
+
+/* end blocks */
+
+/* start headers ------------------------------------------------------------*/
+
+html {
+  font-size: 16px;
+}
+
+.header {
+  font-weight: normal;
+  $start_size: 1.8rem;
+  @for $i from 1 through 6 {
+    &--size_#{$i} {
+      font-size: $start_size - (0.2rem * $i);
+    }
+  }
+}
+
+/* end headers */

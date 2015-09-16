@@ -1,40 +1,40 @@
-/* start container */
+/* start container ----------------------------------------------------------*/
 
 .container {
   box-sizing: border-box;
   width: 100%;
-}
 
-.container--center {
-  box-sizing: border-box;
-  margin: 0 auto;
+  &--center {
+    margin: 0 auto;
 
-  @media (min-width: 0px) and (max-width: 320px) {
-    min-width: 320px;
-  }
+    @media (min-width: 0px) and (max-width: 320px) {
+      min-width: 320px;
+    }
 
-  @media (min-width: 320px) and (max-width: 760px) {
-    width: 100%;
-  }
+    @media (min-width: 320px) and (max-width: 760px) {
+      width: 100%;
+    }
 
-  @media (min-width: 760px) {
-    width: 90%;
+    @media (min-width: 760px) {
+      width: 90%;
+    }
   }
 }
 
 /* end container */
 
 
-/* start backgrounds */
+/* start backgrounds --------------------------------------------------------*/
 
 @mixin background ($title, $color) {
-  $i: 1;
+  $i: 0;
   @each $bg in (
+    zero darken($color, 15%),
     one $color,
     two  lighten($color, 10%),
-    three lighten($color, 20%),
-    four lighten($color, 30%),
-    five lighten($color, 40%)
+    three lighten($color, 15%),
+    four lighten($color, 20%),
+    five lighten($color, 25%)
   ) {
     .background--#{$title}_#{$i} {
       background: #{nth($bg, 2)}
@@ -43,6 +43,19 @@
   }
 }
 
-@include background($title: 'grey', $color: grey);
-@include background($title: 'yellow', $color: yellow);
+@include background($title: 'grey', $color: #9E9E9E);
+@include background($title: 'yellow', $color: #FFEB3B);
+@include background($title: 'red', $color: #F44336);
+@include background($title: 'pink', $color: #E91E63);
+@include background($title: 'teal', $color: #009688);
+@include background($title: 'green', $color: #4CAF50);
+@include background($title: 'orange', $color: #FF9800);
+@include background($title: 'deep_orange', $color: #FF5722);
+@include background($title: 'brown', $color: #795548);
+@include background($title: 'blue_grey', $color: #607D8B);
+@include background($title: 'brown', $color: #795548);
+@include background($title: 'brown', $color: #795548);
+@include background($title: 'purple', $color: #9C27B0);
+@include background($title: 'cyan', $color: #00BCD4);
+
 /* end backgrounds */

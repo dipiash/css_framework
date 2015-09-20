@@ -40,6 +40,8 @@ Example: .background--grey_0, .background--grey_1 or .background--grey_2.
 - 3 - three lighten then ETALON COLOR by 15%
 - 4 - four lighten then ETALON COLOR by 20%
 - 5 - five lighten then ETALON COLOR by 25%
-
-## Columns
+```
+<div class=".background--teal_3">Lorem ipsum</div>
+```
+## Simple columns
 - to be continued

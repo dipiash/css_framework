@@ -44,4 +44,13 @@ Example: .background--grey_0, .background--grey_1 or .background--grey_2.
 <div class=".background--teal_3">Lorem ipsum</div>
 ```
 ## Simple columns
-- to be continued
+- 12 columns.
+- .b_column--size_#{n}
+
+Example
+```
+<div class=".b_column--size_1"></div>
+<div class=".b_column--size_2"></div>
+<div class=".b_column--size_3"></div>
+<div class=".b_column--size_6"></div>
+```
